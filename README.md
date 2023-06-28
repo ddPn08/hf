@@ -45,8 +45,6 @@ hf ls -a -l -h
 hf cat README.md > README.md
 ```
 
-```
-
 ```bash
 hf dl v1-5-pruned.safetensors
 ```
