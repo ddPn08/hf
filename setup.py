@@ -1,8 +1,8 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="hf",
-    packages=["hf"],
+    packages=find_packages(),
     version="0.0.1",
     url="https://github.com/ddPn08/hf",
     description="CLI tool for Huggingface filesystem api.",

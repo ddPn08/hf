@@ -18,7 +18,7 @@ def join_current_dir(filepath: str = ""):
             continue
         else:
             cur = cur.joinpath(name)
-    return str(cur)
+    return str(cur).replace("\\", "/")
 
 
 def get_repo_info(

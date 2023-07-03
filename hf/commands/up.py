@@ -11,10 +11,7 @@ def run(local_file: str, filepath: str = None, ignore_patterns: List[str] = []):
         local_file = local_file[:-1]
     if filepath is None:
         filepath = os.path.split(local_file)[-1]
-        print(os.path.split(local_file))
     filepath = join_current_dir(filepath)
-    if fs.isdir(filepath):
-        filepath = os.path.join(filepath, os.path.basename(local_file))
 
     repo_type, repo_id, repo_path = get_repo_info(filepath)
 
@@ -27,6 +24,8 @@ def run(local_file: str, filepath: str = None, ignore_patterns: List[str] = []):
             ignore_patterns=ignore_patterns,
         )
     else:
+        if fs.exists(filepath) and fs.isdir(filepath):
+            filepath = os.path.join(filepath, os.path.basename(local_file))
         api.upload_file(
             path_or_fileobj=local_file,
             repo_id=repo_id,
