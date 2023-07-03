@@ -14,4 +14,9 @@ setup(
             "hf=hf.main:main",
         ]
     },
+    requires=[
+        "fire",
+        "colorama",
+        "huggingface_hub",
+    ]
 )
