@@ -32,6 +32,6 @@ def get_repo_info(
     else:
         repo_type = "model"
         filepath = filepath[7:]
-        repo_id = filepath.split("/")[0]
+        repo_id = "/".join(filepath.split("/")[:2])
         filepath = filepath[len(repo_id) + 1 :]
     return repo_type, repo_id, filepath
